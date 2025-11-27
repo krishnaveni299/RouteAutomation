@@ -14,6 +14,8 @@ import utils.ExtentManager;
 
 public class BaseClass {
 
+//    public static WebDriver driver;
+//    public static Properties prop;
     public static WebDriver driver;
     public static Properties prop;
 
