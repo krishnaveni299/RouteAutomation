@@ -16,8 +16,7 @@ public class OrganizationRegistration extends BaseClass {
         registeration.clickregisterlink();
         registeration.setOrganizationname();
         registeration.setOrganizationwebsite();
-        registeration.setOrganizationcountry();
-      //  registeration.setOrganizationcountry();
+       registeration.setOrganizationcountry();
     }
 
 }
