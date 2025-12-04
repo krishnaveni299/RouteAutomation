@@ -1,26 +1,43 @@
 package testcases;
 
 import base.BaseClass;
-import utils.ConfigReader;
-import org.testng.annotations.*;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.testng.Assert;
+import org.testng.annotations.Test;
 import pages.LoginPage;
 
-
 public class LoginTC01 extends BaseClass {
-
-
     @Test
     public void loginwithvalidcredentials() throws InterruptedException {
-        LoginPage loginPage=new LoginPage(driver);
-        loginPage.setUserName(prop.getProperty("username"));
-        loginPage.setPassWord(prop.getProperty("password"));
+        LoginPage loginPage = new LoginPage(driver);
+        loginPage.setUserName("username");
+        Thread.sleep(3000);
+        loginPage.setPassWord("password");
+        Thread.sleep(3000);
         loginPage.clickButton();
-
+        Assert.assertEquals(loginPage.getActualHeader(),loginPage.setExpectedHeader());
 
     }
-//    @DataProvider(name="logintestdata")
-//     Object[][] getData() {
-//         Object[][] testdata = {{"irisidea@gmail.com", "irisidea@"}, {"Sales@routeeye.io", "sales@"}, {" ", "irisidea@"}};
-//         return testdata;
-//     }
+
+    @Test
+    public void loginwithinvalidcredentials() throws InterruptedException {
+        LoginPage loginPage1 = new LoginPage(driver);
+        loginPage1.setUserName("invalid_username" );
+        Thread.sleep(3000);
+        loginPage1.setPassWord("password");
+        Thread.sleep(3000);
+        loginPage1.clickButton();
+
+    }
+       @Test
+    public void loginwithblankcredentials() throws InterruptedException {
+        LoginPage loginPage2 = new LoginPage(driver);
+        loginPage2.setUserName("blank_username" );
+        Thread.sleep(3000);
+        loginPage2.setPassWord("blank_password");
+        Thread.sleep(3000);
+        loginPage2.clickButton();
+
+    }
 }
