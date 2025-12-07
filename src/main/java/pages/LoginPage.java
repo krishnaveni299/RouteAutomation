@@ -42,17 +42,17 @@ public class LoginPage {
 
 
 
-    public void setUserName(String username) {
+    public void setUserName(String Email) {
         wait.until(ExpectedConditions.visibilityOf(emailId));
 
-        emailId.sendKeys(ConfigReader.getProperty(username));
+        emailId.sendKeys(Email);
 
 
     }
 
-    public void setPassWord(String password) {
+    public void setPassWord(String Password) {
         wait.until(ExpectedConditions.visibilityOf(enterPassword));
-        enterPassword.sendKeys(ConfigReader.getProperty(password));
+        enterPassword.sendKeys(Password);
 
 
     }

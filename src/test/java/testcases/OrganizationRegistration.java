@@ -9,14 +9,23 @@ public class OrganizationRegistration extends BaseClass {
 //
 
     @Test
-    public void registrationdetails()
-    {
+    public void registrationdetails() throws InterruptedException {
 
         RegistrationPage registeration=new RegistrationPage(driver);
         registeration.clickregisterlink();
         registeration.setOrganizationname();
         registeration.setOrganizationwebsite();
        registeration.setOrganizationcountry();
+      registeration.setOrganizationstate();
+//       registeration.setOrganizationcity();
+//       registeration.setPhoneNumber();
+//       registeration.setAddress();
+//       registeration.setPincode();
+//        registeration.setContactname();
+//       registeration.setEmail();
+//       registeration.clickregisterbutton();
+
+
     }
 
 }
